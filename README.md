@@ -12,3 +12,11 @@
     mvn clean install
     docker-compose build --no-cache app app
 	docker-compose up --build --force-recreate --no-deps -d app
+
+###### or
+
+    make redeploy
+
+### Swagger
+
+    http://localhost:8080/api/swagger-ui/index.html
