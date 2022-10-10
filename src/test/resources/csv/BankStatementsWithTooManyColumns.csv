@@ -1,0 +1,10 @@
+accountNumber,operationDate,beneficiary,comment,amount,currency
+account1,2022-09-19T20:55:41,account2,comment,500,EUR
+account1,2022-09-20T20:55:41,account3,,200,EUR,col
+account2,2022-09-21T20:55:41,account3,,400,EUR,col
+account3,2022-09-22T20:55:41,account4,,300,USD,col
+,2022-09-22T20:55:41,account4,,300,USD,col
+account3,,account4,,300,USD,col
+account3,2022-09-22T20:55:41,,,300,USD,col
+account3,2022-09-22T20:55:41,account4,,,USD,col
+account3,2022-09-22T20:55:41,account4,,300,,col

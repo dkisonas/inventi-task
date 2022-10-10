@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "server.servlet.context-path" : "/api",
+        "spring.datasource.url" : "jdbc:postgresql://db:5432/inventi_db",
+        "spring.datasource.username" : "postgres",
+        "spring.datasource.password" : "password",
+        "spring.jpa.hibernate.ddl-auto" : "update"
+      }'
+    volumes:
+      - .m2:/root/.m2
+    depends_on:
+      - db
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=inventi_db
+    ports:
+      - "5432:5432"
